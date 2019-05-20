@@ -100,6 +100,9 @@
     <Compile Include="Vacaciones.cs">
       <DependentUpon>Modelo_Datos.tt</DependentUpon>
     </Compile>
+    <Compile Include="w_Registrar_Empleado.xaml.cs">
+      <DependentUpon>w_Registrar_Empleado.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -112,6 +115,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="w_Registrar_Empleado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modelo_Datos.Context.cs">

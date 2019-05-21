@@ -13,10 +13,10 @@ namespace TPNomina
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NominaEntities : DbContext
+    public partial class ConexionBD : DbContext
     {
-        public NominaEntities()
-            : base("name=NominaEntities")
+        public ConexionBD()
+            : base("name=ConexionBD")
         {
         }
     

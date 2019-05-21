@@ -83,10 +83,20 @@
     <Compile Include="Empleado.cs">
       <DependentUpon>Modelo_Datos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo_Datos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo_Datos.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo_Datos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Modelo_Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo_Datos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo_Datos.edmx</DependentUpon>
     </Compile>
     <Compile Include="Permisos.cs">
       <DependentUpon>Modelo_Datos.tt</DependentUpon>
@@ -99,6 +109,12 @@
     </Compile>
     <Compile Include="Vacaciones.cs">
       <DependentUpon>Modelo_Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="w_Permiso.xaml.cs">
+      <DependentUpon>w_Permiso.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_Turno.xaml.cs">
+      <DependentUpon>w_Turno.xaml</DependentUpon>
     </Compile>
     <Compile Include="w_Registrar_Empleado.xaml.cs">
       <DependentUpon>w_Registrar_Empleado.xaml</DependentUpon>
@@ -115,22 +131,20 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="w_Permiso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_Turno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="w_Registrar_Empleado.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modelo_Datos.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Modelo_Datos.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Modelo_Datos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Modelo_Datos.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -166,6 +180,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Modelo_Datos.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Modelo_Datos.edmx</DependentUpon>
@@ -176,9 +193,6 @@
       <DependentUpon>Modelo_Datos.edmx</DependentUpon>
       <LastGenOutput>Modelo_Datos.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

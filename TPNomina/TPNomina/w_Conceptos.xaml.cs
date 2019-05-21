@@ -19,12 +19,21 @@ namespace TPNomina
     /// </summary>
     public partial class w_Conceptos : Window
     {
+        ConexionBD datos;
         public w_Conceptos()
         {
             InitializeComponent();
+
+            datos = new ConexionBD();
         }
 
+
         private void BtnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
         }

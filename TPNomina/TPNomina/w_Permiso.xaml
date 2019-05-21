@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TPNomina"
         mc:Ignorable="d"
-        Title="w_Permiso" Height="450" Width="800">
+        Title="Registro de Permiso" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <GroupBox Header="Permisos Existentes" Canvas.Left="10" Canvas.Top="256" Height="360" Width="466">
             <DataGrid Name="dgPermisos" >

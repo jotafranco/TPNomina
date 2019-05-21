@@ -27,10 +27,26 @@ namespace TPNomina
             datos = new ConexionBD();
         }
 
+        private void LimpiarDatos()
+        {
+
+           txtDescripcion_Concepto.Text = string.Empty;
+           txtTipo_Concepto.Text = string.Empty;
+
+        }
 
         private void BtnGuardar_Click(object sender, RoutedEventArgs e)
         {
+            Concepto con = new Concepto();
+            con.Descripcion = txtDescripcion_Concepto.Text;
+            con.Tipo = txtTipo_Concepto.Text;
 
+
+
+            datos.Concepto.Add(con);
+            datos.SaveChanges();
+            MessageBox.Show("Concepto Guardado");
+            LimpiarDatos();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

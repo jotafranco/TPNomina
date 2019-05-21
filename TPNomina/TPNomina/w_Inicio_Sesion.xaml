@@ -11,13 +11,13 @@
             <Image Source="/logo.jpg" Height="96" Width="96"/>
             <Border Background="White" Margin="10 20" CornerRadius="5">
                 <StackPanel Margin="25">
-                    <ComboBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Usuario">
+                    <ComboBox Margin="15"  materialDesign:HintAssist.Hint="Usuario">
                         <ComboBoxItem Content="Cami"/>
                         <ComboBoxItem Content="Jorge"/>
                         <ComboBoxItem Content="Meli"/>
                         <ComboBoxItem Content="Juan"/>
                     </ComboBox>
-                    <TextBox Margin="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Contraseña"/>
+                    <TextBox Margin="15"  materialDesign:HintAssist.Hint="Contraseña"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Margin="15 50" Content="Cancelar" Background="#FF1A3797"/>
                         <Button Margin="15 50" Content="Ingresar" Background="#FF1A3797"/>

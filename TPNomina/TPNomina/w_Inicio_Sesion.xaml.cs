@@ -19,9 +19,42 @@ namespace TPNomina
     /// </summary>
     public partial class w_Inicio_Sesion : Window
     {
+        ConexionBD datos;
         public w_Inicio_Sesion()
         {
             InitializeComponent();
+
+            datos = new ConexionBD();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Ingresar_Click(object sender, RoutedEventArgs e)
+        {
+            Usuario usuario = new Usuario();
+            
+        }
+        
+        private void Cancelar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            cboUsuario.ItemsSource = datos.Usuario.ToList();
+            cboUsuario.DisplayMemberPath = "Usuario1";
+            cboUsuario.SelectedValuePath = "Id_Usuario";
+
         }
     }
 }
+

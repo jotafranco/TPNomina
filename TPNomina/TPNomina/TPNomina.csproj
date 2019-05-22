@@ -110,6 +110,9 @@
     <Compile Include="Vacaciones.cs">
       <DependentUpon>Modelo_Datos.tt</DependentUpon>
     </Compile>
+    <Compile Include="W_Anticipo.xaml.cs">
+      <DependentUpon>W_Anticipo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="w_Conceptos.xaml.cs">
       <DependentUpon>w_Conceptos.xaml</DependentUpon>
     </Compile>
@@ -137,6 +140,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="W_Anticipo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="w_Conceptos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -5,22 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TPNomina"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="w_Inicio_Sesion" mc:Ignorable="d" Height="600" Width="400" ResizeMode="NoResize" WindowStyle="None" Background="#FF3B5FD8">
+        Title="w_Inicio_Sesion" mc:Ignorable="d" Height="600" Width="400" ResizeMode="NoResize" WindowStyle="None" Background="#FF3B5FD8"
+        Loaded="Window_Loaded">
     <Grid>
         <StackPanel Margin="50">
             <Image Source="/logo.jpg" Height="96" Width="96"/>
             <Border Background="White" Margin="10 20" CornerRadius="5">
                 <StackPanel Margin="25">
-                    <ComboBox Margin="15"  materialDesign:HintAssist.Hint="Usuario">
-                        <ComboBoxItem Content="Cami"/>
-                        <ComboBoxItem Content="Jorge"/>
-                        <ComboBoxItem Content="Meli"/>
-                        <ComboBoxItem Content="Juan"/>
-                    </ComboBox>
-                    <TextBox Margin="15"  materialDesign:HintAssist.Hint="Contraseña"/>
+                    <ComboBox Name="cboUsuario" Margin="15"  materialDesign:HintAssist.Hint="Usuario"/>
+                    <PasswordBox Margin="15"  materialDesign:HintAssist.Hint="Contraseña"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button Margin="15 50" Content="Cancelar" Background="#FF1A3797"/>
-                        <Button Margin="15 50" Content="Ingresar" Background="#FF1A3797"/>
+                        <Button Margin="15 50" Content="Cancelar" Background="#FF1A3797" Click="Cancelar_Click"/>
+                        <Button Margin="15 50" Content="Ingresar" Background="#FF1A3797" Click="Ingresar_Click"/>
                     </StackPanel>
                 </StackPanel>
             </Border>

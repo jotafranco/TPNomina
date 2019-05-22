@@ -6,8 +6,60 @@
         xmlns:local="clr-namespace:TPNomina"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="w_Registrar_Empleado" Height="300" Width="300">
-    <Grid>
-        
-    </Grid>
+        Title="Empleado" Height="317.698" Width="530" WindowStartupLocation="CenterScreen">
+    <Canvas>
+        <GroupBox Header="Datos" Height="228" Width="510">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+
+
+
+                </Grid.RowDefinitions>
+                <Label Content="Id" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right"/>
+                <Label Content="Nombres" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right"/>
+                <Label Content="Apellidos" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right"/>
+                <Label Content="Nro. de documento" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right"/>
+                <Label Content="Dirección" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Right"/>
+                <Label Content="Nro. de teléfono" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right"/>
+                <Label Content="Fecha de nacimiento" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Right"/>
+                <Label Content="Fecha de incorporación" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,24.4,90.8,0.2" Grid.RowSpan="2"/>
+                <Label Content="Salario Básico" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,24.6,90.8,0" Grid.RowSpan="2"/>
+
+                <TextBox Name="txtId" IsReadOnly="True" Grid.Column="1" Grid.Row="0"/>
+                <TextBox Name="txtNombre" Grid.Column="1" Grid.Row="1"/>
+                <TextBox Name="txtApellido" Grid.Column="1" Grid.Row="2"/>
+                <TextBox Name="txtDocumento" Grid.Column="1" Grid.Row="3"/>
+                <TextBox Name="txtDireccion" Grid.Column="1" Grid.Row="4"/>
+                <TextBox Name="txtTelefono" Grid.Column="1" Grid.Row="5"/>
+                <DatePicker Name="dtpFechaNacimiento" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="0,24.6,0,-75" Grid.Row="5" Grid.RowSpan="2" VerticalAlignment="Top"/>
+                <DatePicker Name="dtpFechaIncorporacion" Grid.Column="3" HorizontalAlignment="Left" Height="100" Margin="0.4,24.6,0,-75" Grid.Row="5" Grid.RowSpan="2" VerticalAlignment="Top"/>
+                <TextBox Name="txtSalario" Grid.Column="3" Grid.Row="5" Margin="0.4,0.6,-1.2,24" Grid.RowSpan="2"/>
+
+                <GroupBox Grid.Column="2" Grid.Row="0" Grid.RowSpan="5" Header="Imagen" Margin="9.8,2,9.6,5.4" RenderTransformOrigin="0.493,0.305">
+                    <Image Name="foto" Stretch="Fill"/>
+                </GroupBox>
+                <Button Name="btnImagen" FontSize="9" Content="Seleccionar" Grid.Column="3" HorizontalAlignment="Left" Margin="10.4,24.4,-0.2,0" Grid.Row="1" Grid.RowSpan="3" VerticalAlignment="Top" Width="81" Click="BtnImagen_Click" Height="27"/>
+
+            </Grid>
+        </GroupBox>
+        <Button Name="btnGuardar" Content="Guardar" Canvas.Left="141" Canvas.Top="233" Click="BtnGuardar_Click"></Button>
+        <Button Name="btnCancelar" Content="Cancelar" Canvas.Left="311" Canvas.Top="233"/>
+
+    </Canvas>
+
 </Window>

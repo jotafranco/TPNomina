@@ -9,7 +9,7 @@
         Title="Registro de Permiso" Height="400" Width="500" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
         <GroupBox Header="Permisos Existentes" Canvas.Left="10" Canvas.Top="256" Height="360" Width="466" RenderTransformOrigin="0.5,0.5">
-            <DataGrid Name="dgPermisos" Margin="2,-21,-2,21" >
+            <DataGrid Name="dgPermisos"  >
             </DataGrid>
         </GroupBox>
     </Grid>

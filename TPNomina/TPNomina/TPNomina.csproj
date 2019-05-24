@@ -119,6 +119,9 @@
     <Compile Include="w_Inicio_Sesion.xaml.cs">
       <DependentUpon>w_Inicio_Sesion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="w_MenuPrincipal.xaml.cs">
+      <DependentUpon>w_MenuPrincipal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="w_Permiso.xaml.cs">
       <DependentUpon>w_Permiso.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="w_Inicio_Sesion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_MenuPrincipal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

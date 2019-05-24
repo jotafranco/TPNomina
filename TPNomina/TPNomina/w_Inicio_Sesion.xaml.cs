@@ -27,26 +27,9 @@ namespace TPNomina
             datos = new ConexionBD();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-           
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Ingresar_Click(object sender, RoutedEventArgs e)
-        {
-            Usuario usuario = new Usuario();
-            
-        }
         
-        private void Cancelar_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
+        
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -54,6 +37,31 @@ namespace TPNomina
             cboUsuario.DisplayMemberPath = "Usuario1";
             cboUsuario.SelectedValuePath = "Id_Usuario";
 
+        }
+
+        private void Cancelar_Click(object sender, RoutedEventArgs e)
+        {
+            PassBox.Clear();
+            cboUsuario.SelectedIndex = -1;
+        }
+
+        private void Ingresar_Click(object sender, RoutedEventArgs e)
+        {
+            var usuarios = (from u in datos.Usuario
+                            where (cboUsuario.Text == u.Usuario1 && u.Password == PassBox.Password)
+                            select u).ToList();
+            MessageBox.Show("Inicio correcto");
+
+            if (usuarios.Count() == 0)
+            {
+                MessageBox.Show("Contraseña incorrecta");
+            }
+            else
+            {
+                w_MenuPrincipal ventanaMenu = new w_MenuPrincipal();
+                ventanaMenu.ShowDialog();
+                MessageBox.Show("Adiositoooo!!!");
+            }
         }
     }
 }

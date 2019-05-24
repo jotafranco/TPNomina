@@ -58,7 +58,7 @@
             </Grid>
         </GroupBox>
         <Button Name="btnGuardar" Content="Guardar" Canvas.Left="141" Canvas.Top="233" Click="BtnGuardar_Click"></Button>
-        <Button Name="btnCancelar" Content="Cancelar" Canvas.Left="311" Canvas.Top="233"/>
+        <Button Name="btnCancelar" Content="Cancelar" Canvas.Left="311" Canvas.Top="233" Click="BtnCancelar_Click"/>
 
     </Canvas>
 

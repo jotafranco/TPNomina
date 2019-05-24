@@ -27,6 +27,20 @@ namespace TPNomina
             datos = new ConexionBD();
         }
 
+        private void LimpiarDatos()
+        {
+
+            txtNombre.Text = string.Empty;
+            txtApellido.Text = string.Empty;
+            txtDocumento.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+            this.dtpFechaIncorporacion.SelectedDate = null;
+            this.dtpFechaNacimiento.SelectedDate = null;
+
+            foto.Source = null;
+        }
+
         private void BtnGuardar_Click(object sender, RoutedEventArgs e)
         {
             //Instaciar el objeto de la clase Empleado
@@ -42,8 +56,11 @@ namespace TPNomina
             emp.Imagen_Perfil = foto.Source.ToString();
 
             //Guardamos los datos ingresados
+
             datos.Empleado.Add(emp);
             datos.SaveChanges();
+            MessageBox.Show("Datos del Empleado Guardado con éxito¡¡¡");
+            LimpiarDatos();
 
         }
 
@@ -58,6 +75,11 @@ namespace TPNomina
             {
                 foto.Source = new BitmapImage(new Uri(op.FileName));
             }
+        }
+
+        private void BtnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            LimpiarDatos();
         }
     }
 }

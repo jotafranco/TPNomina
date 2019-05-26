@@ -35,6 +35,7 @@ namespace TPNomina
             txtDocumento.Text = string.Empty;
             txtDireccion.Text = string.Empty;
             txtTelefono.Text = string.Empty;
+            txtSalario.Text = string.Empty;
             this.dtpFechaIncorporacion.SelectedDate = null;
             this.dtpFechaNacimiento.SelectedDate = null;
 
@@ -51,6 +52,7 @@ namespace TPNomina
             emp.Nro_Documento = txtDocumento.Text;
             emp.Direccion = txtDireccion.Text;
             emp.Nro_Telefono = txtTelefono.Text;
+            emp.Salario_Basico =  Convert.ToInt32(txtSalario.Text);
             emp.Fecha_Nacimiento = Convert.ToDateTime(dtpFechaNacimiento.SelectedDate);
             emp.Fecha_Incorporacion = dtpFechaIncorporacion.SelectedDate;
             emp.Imagen_Perfil = foto.Source.ToString();

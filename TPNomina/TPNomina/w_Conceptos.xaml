@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:TPNomina"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Concepto" Height="307" Width="500"  WindowStartupLocation="CenterScreen"  Loaded="Window_Loaded">
+        Title="Registro del Concepto" Height="307" Width="500"  WindowStartupLocation="CenterScreen"  Loaded="Window_Loaded">
     <Canvas>
-        <GroupBox Header="Concepto" Canvas.Left="10" Canvas.Top="15" Height="236" Width="466">
+        <GroupBox Header="Datos del Concepto" Canvas.Left="10" Canvas.Top="15" Height="236" Width="466">
             <Grid>
 
                 <Grid.ColumnDefinitions>

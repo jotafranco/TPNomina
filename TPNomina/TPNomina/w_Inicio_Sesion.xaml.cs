@@ -50,12 +50,14 @@ namespace TPNomina
             var usuarios = (from u in datos.Usuario
                             where (cboUsuario.Text == u.Usuario1 && u.Password == PassBox.Password)
                             select u).ToList();
-            MessageBox.Show("Inicio correcto");
 
+            
             if (usuarios.Count() == 0)
             {
                 MessageBox.Show("Contraseña incorrecta");
+
             }
+
             else
             {
                 w_MenuPrincipal ventanaMenu = new w_MenuPrincipal();

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TPNomina"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Empleado" Height="317.698" Width="530" WindowStartupLocation="CenterScreen">
+        Title="Registro de Empleado" Height="317.698" Width="530" WindowStartupLocation="CenterScreen">
     <Canvas>
         <GroupBox Header="Datos" Height="228" Width="510">
             <Grid>
@@ -46,6 +46,7 @@
                 <TextBox Name="txtDocumento" Grid.Column="1" Grid.Row="3"/>
                 <TextBox Name="txtDireccion" Grid.Column="1" Grid.Row="4"/>
                 <TextBox Name="txtTelefono" Grid.Column="1" Grid.Row="5"/>
+                
                 <DatePicker Name="dtpFechaNacimiento" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="0,24.6,0,-75" Grid.Row="5" Grid.RowSpan="2" VerticalAlignment="Top"/>
                 <DatePicker Name="dtpFechaIncorporacion" Grid.Column="3" HorizontalAlignment="Left" Height="100" Margin="0.4,24.6,0,-75" Grid.Row="5" Grid.RowSpan="2" VerticalAlignment="Top"/>
                 <TextBox Name="txtSalario" Grid.Column="3" Grid.Row="5" Margin="0.4,0.6,-1.2,24" Grid.RowSpan="2"/>

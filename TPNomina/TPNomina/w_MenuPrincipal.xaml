@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TPNomina"
         mc:Ignorable="d"
-        Title="w_MenuPrincipal" Height="450" Width="800">
+        Title="MenuPrincipal" Height="450" Width="800">
     <Menu Name="MenuPrincipal">
         <MenuItem Header="Opciones">
             <MenuItem Header="Anticipo"  Name="MenuAnticipo"  Click="MenuAnticipo_Click" />

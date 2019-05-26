@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 
         mc:Ignorable="d"
-        Title="Registro de Anticipo" Height="351.508" Width="505.924" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+        Title="Consulta de Anticipo" Height="351.508" Width="505.924" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Canvas  >
         <GroupBox Header="Anticipo Existente"  Canvas.Left="16" Canvas.Top="10" Height="293" Width="466" RenderTransformOrigin="0.5,0.5">
 

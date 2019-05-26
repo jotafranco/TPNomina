@@ -13,6 +13,7 @@
             <MenuItem Header="Empleado" Name="MenuEmpleado" Click="MenuEmpleado_Click"/>
             <MenuItem Header="Permiso"  Name="MenuPermiso" Click="MenuPermiso_Click"/>            
             <MenuItem Header="Turno" Name="MenuTurno" Click="MenuTurno_Click"/>
+            <MenuItem Header="Vacaciones" Name="MenuVacaciones" Click="MenuVacaciones_Click"/>
             <Separator />
             <MenuItem Header="Salir"  Name="MenuSalir" Click="MenuSalir_Click"/>
         </MenuItem>

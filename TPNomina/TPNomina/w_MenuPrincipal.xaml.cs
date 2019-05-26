@@ -64,5 +64,11 @@ namespace TPNomina
         {
             this.Close();
         }
+
+        private void MenuVacaciones_Click(object sender, RoutedEventArgs e)
+        {
+            w_Pedido_Vacaciones ventana_vacaciones = new w_Pedido_Vacaciones();
+            ventana_vacaciones.ShowDialog();
+        }
     }
 }

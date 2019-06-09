@@ -37,16 +37,48 @@ namespace TPNomina
 
         private void BtnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            Turno tur = new Turno();
-            tur.Hora_Entrada = txtHoraEnt.Text;
-            tur.Hora_Salida = txtHoraSal.Text;
-            tur.Observaciones = txtObservacion.Text;
+            try
+            { 
+                    Turno tur = new Turno();
+                    tur.Hora_Entrada = txtHoraEnt.Text;
+                    tur.Hora_Salida = txtHoraSal.Text;
+                    tur.Observaciones = txtObservacion.Text;
 
+                if (txtHoraEnt.Text != "")
+                {
+                    if (txtHoraSal.Text != "")
+                    {
+                        if (txtObservacion.Text != "")
+                        {
+                            datos.Turno.Add(tur);
+                            datos.SaveChanges();
+                            MessageBox.Show("Turno Guardado con éxito¡¡¡");
+                            LimpiarDatos();
+                        }
+                        else
 
-            datos.Turno.Add(tur);
-            datos.SaveChanges();
-            MessageBox.Show("Turno Guardado con éxito¡¡¡");
-            LimpiarDatos();
+                        {
+                            MessageBox.Show("Falta Campos");
+                        }
+                    } else
+
+                    {
+                        MessageBox.Show("Falta Campos");
+                    }
+                }
+                else
+
+                    {
+                        MessageBox.Show("Falta Campos");
+                    }
+            }
+
+            catch
+            {
+
+                MessageBox.Show("Completa todo -.- ");
+
+            }
 
         }
 

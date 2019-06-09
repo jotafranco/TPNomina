@@ -46,23 +46,36 @@ namespace TPNomina
         {
             //Instaciar el objeto de la clase Empleado
             Empleado emp = new Empleado();
+           try
+            {
+                if (ValidarDatos() == false)
+                {
+                    emp.Nombres = txtNombre.Text;
+                    emp.Apellidos = txtApellido.Text;
+                    emp.Nro_Documento = txtDocumento.Text;
+                    emp.Direccion = txtDireccion.Text;
+                    emp.Nro_Telefono = txtTelefono.Text;
+                    emp.Salario_Basico = Convert.ToInt32(txtSalario.Text);
+                    emp.Fecha_Nacimiento = Convert.ToDateTime(dtpFechaNacimiento.SelectedDate);
+                    emp.Fecha_Incorporacion = dtpFechaIncorporacion.SelectedDate;
+                    emp.Imagen_Perfil = foto.Source.ToString();
 
-            emp.Nombres = txtNombre.Text;
-            emp.Apellidos = txtApellido.Text;
-            emp.Nro_Documento = txtDocumento.Text;
-            emp.Direccion = txtDireccion.Text;
-            emp.Nro_Telefono = txtTelefono.Text;
-            emp.Salario_Basico =  Convert.ToInt32(txtSalario.Text);
-            emp.Fecha_Nacimiento = Convert.ToDateTime(dtpFechaNacimiento.SelectedDate);
-            emp.Fecha_Incorporacion = dtpFechaIncorporacion.SelectedDate;
-            emp.Imagen_Perfil = foto.Source.ToString();
+                    //Guardamos los datos ingresados
 
-            //Guardamos los datos ingresados
-
-            datos.Empleado.Add(emp);
-            datos.SaveChanges();
-            MessageBox.Show("Datos del Empleado Guardado con éxito¡¡¡");
-            LimpiarDatos();
+                    datos.Empleado.Add(emp);
+                    datos.SaveChanges();
+                    MessageBox.Show("Datos del Empleado Guardado con éxito¡¡¡");
+                    LimpiarDatos();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor llene todos los campos");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Llene todos los campos");
+            }
 
         }
 
@@ -82,6 +95,19 @@ namespace TPNomina
         private void BtnCancelar_Click(object sender, RoutedEventArgs e)
         {
             LimpiarDatos();
+        }
+
+        private bool ValidarDatos()
+        {
+            if (txtDireccion.Text == string.Empty)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
     }
 }

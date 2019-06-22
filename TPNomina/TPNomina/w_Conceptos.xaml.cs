@@ -37,19 +37,54 @@ namespace TPNomina
 
         private void BtnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            Concepto con = new Concepto();
-            con.Descripcion = txtDescripcion_Concepto.Text;
-            con.Tipo = txtTipo_Concepto.Text;
+            
+
+            try
+            {
+                Concepto con = new Concepto();
+                con.Descripcion = txtDescripcion_Concepto.Text;
+                con.Tipo = txtTipo_Concepto.Text;
+
+
+                if (txtDescripcion_Concepto.Text !=""  )
+                {
+                    if (txtTipo_Concepto.Text != "")
+                    {
+                        datos.Concepto.Add(con);
+                        datos.SaveChanges();
+                        MessageBox.Show("Concepto Guardado");
+                        LimpiarDatos();
+                    }
+                    else
+
+                    {
+                        MessageBox.Show("Falta Campos");
+
+                    }
+                }
+
+                else
+
+                {
+                    MessageBox.Show("Falta Campos");
+                    
+                }
+            }
+
+            catch
+            {
+
+                MessageBox.Show("LLena todos los campos plis ");
+
+            }
 
 
 
-            datos.Concepto.Add(con);
-            datos.SaveChanges();
-            MessageBox.Show("Concepto Guardado");
-            LimpiarDatos();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        
+
+            private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
         }

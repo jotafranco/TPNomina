@@ -7,13 +7,15 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 
         mc:Ignorable="d"
-        Title="Consulta de Anticipo" Height="351.508" Width="505.924" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+        Title="Consulta de Anticipo" Height="500" Width="500" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Canvas  >
         <GroupBox Header="Anticipo Existente"  Canvas.Left="16" Canvas.Top="10" Height="293" Width="466" RenderTransformOrigin="0.5,0.5">
 
             <DataGrid Name="dgAnticipos" >
             </DataGrid>
         </GroupBox>
+        <Button Click="btnAprobar_Click" x:Name="btnAprobar" Content="Aprobar" Canvas.Left="133" Canvas.Top="370" Width="96"/>
+        <Button Click="btnRechazar_Click" x:Name="btnRechazar" Content="Rechazar" Canvas.Left="264" Canvas.Top="370" Width="94" RenderTransformOrigin="1.573,0.375"/>
 
     </Canvas>
 </Window>

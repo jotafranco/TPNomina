@@ -52,6 +52,7 @@ namespace TPNomina
 
                 Datos.Entry(V).State = System.Data.Entity.EntityState.Modified;
                 Datos.SaveChanges();
+                cargarGrillaVacaciones();
 
             }
 
@@ -72,6 +73,7 @@ namespace TPNomina
 
                 Datos.Entry(V).State = System.Data.Entity.EntityState.Modified;
                 Datos.SaveChanges();
+                cargarGrillaVacaciones();
 
             }
         }

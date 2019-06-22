@@ -4,28 +4,28 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2db11d38d28541f292a4dc97f9c1d9eb" Name="Diagram1" ZoomLevel="74">
-        <EntityTypeShape EntityType="NominaModel.Anticipo" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="NominaModel.Concepto" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NominaModel.Empleado" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="NominaModel.Permisos" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="NominaModel.Turno" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NominaModel.Usuario" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="NominaModel.Vacaciones" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
-        <AssociationConnector Association="NominaModel.FK_Anticipo_Empleado" ManuallyRouted="false" />
-        <AssociationConnector Association="NominaModel.FK_Empleado_Usuario" ManuallyRouted="false" />
-        <AssociationConnector Association="NominaModel.FK_Permisos_Empleado" ManuallyRouted="false" />
-        <AssociationConnector Association="NominaModel.FK_Vacaciones_Empleado" ManuallyRouted="false" />
-        <AssociationConnector Association="NominaModel.FK__Empleado__Turno___21B6055D" />
-        <EntityTypeShape EntityType="NominaModel.Empleado_Salario_Historico" Width="1.5" PointX="5.25" PointY="7.25" />
-        <EntityTypeShape EntityType="NominaModel.Liquidacion_Mensual" Width="1.5" PointX="5.25" PointY="11.875" />
-        <EntityTypeShape EntityType="NominaModel.Liquidacion_Mensual_Detalle" Width="1.5" PointX="8" PointY="6.25" />
-        <AssociationConnector Association="NominaModel.FK__Liquidaci__Conce__2B3F6F97" />
-        <AssociationConnector Association="NominaModel.FK__Empleado___Emple__2E1BDC42" />
-        <AssociationConnector Association="NominaModel.FK__Liquidaci__Emple__2A4B4B5E" />
-        <AssociationConnector Association="NominaModel.FK__Empleado___Usuar__2F10007B" />
-        <AssociationConnector Association="NominaModel.FK__Liquidaci__Liqui__29572725" />
-        <AssociationConnector Association="NominaModel.FK__Liquidaci__Usuar__25869641" />
+      <Diagram DiagramId="8cc232dc79d24ff49658cf82fcdcb850" Name="Diagram1">
+        <EntityTypeShape EntityType="Modelo_Datos.Anticipo" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo_Datos.Concepto" Width="1.5" PointX="7.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo_Datos.Empleado" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo_Datos.Empleado_Salario_Historico" Width="1.5" PointX="7.5" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo_Datos.Liquidacion_Mensual" Width="1.5" PointX="7.5" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo_Datos.Liquidacion_Mensual_Detalle" Width="1.5" PointX="9.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo_Datos.Permisos" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo_Datos.Turno" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo_Datos.Usuario" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="Modelo_Datos.Vacaciones" Width="1.5" PointX="5.25" PointY="22.25" IsExpanded="true" />
+        <AssociationConnector Association="Modelo_Datos.FK_Anticipo_Empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelo_Datos.FK__Liquidaci__Conce__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelo_Datos.FK__Empleado___Emple__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelo_Datos.FK__Empleado__Turno___20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelo_Datos.FK__Liquidaci__Emple__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelo_Datos.FK_Empleado_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelo_Datos.FK_Permisos_Empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelo_Datos.FK_Vacaciones_Empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelo_Datos.FK__Empleado___Usuar__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelo_Datos.FK__Liquidaci__Liqui__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="Modelo_Datos.FK__Liquidaci__Usuar__24927208" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

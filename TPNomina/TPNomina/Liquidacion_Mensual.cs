@@ -12,19 +12,23 @@ namespace TPNomina
     using System;
     using System.Collections.Generic;
     
-    public partial class Concepto
+    public partial class Liquidacion_Mensual
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Concepto()
+        public Liquidacion_Mensual()
         {
             this.Liquidacion_Mensual_Detalle = new HashSet<Liquidacion_Mensual_Detalle>();
         }
     
-        public int Id_Concepto { get; set; }
-        public string Descripcion { get; set; }
-        public string Tipo { get; set; }
+        public int Id_Liquidacion { get; set; }
+        public short Mes { get; set; }
+        public short Anho { get; set; }
+        public System.DateTime Fecha_Generacion { get; set; }
+        public int Usuario_Id { get; set; }
+        public string Estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Liquidacion_Mensual_Detalle> Liquidacion_Mensual_Detalle { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

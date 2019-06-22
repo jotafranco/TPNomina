@@ -83,6 +83,15 @@
     <Compile Include="Empleado.cs">
       <DependentUpon>Modelo_Datos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Empleado_Salario_Historico.cs">
+      <DependentUpon>Modelo_Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidacion_Mensual.cs">
+      <DependentUpon>Modelo_Datos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidacion_Mensual_Detalle.cs">
+      <DependentUpon>Modelo_Datos.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo_Datos.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -219,6 +228,8 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Modelo_Datos.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Modelo_Datos.edmx</DependentUpon>

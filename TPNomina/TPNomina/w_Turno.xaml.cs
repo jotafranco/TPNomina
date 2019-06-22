@@ -17,10 +17,10 @@ namespace TPNomina
     /// <summary>
     /// Lógica de interacción para Turno.xaml
     /// </summary>
-    public partial class Turno : Window
+    public partial class w_Turno : Window
     {
         ConexionBD datos;
-        public Turno()
+        public w_Turno()
         {
             InitializeComponent();
 

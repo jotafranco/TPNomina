@@ -55,7 +55,7 @@ namespace TPNomina
 
         private void MenuTurno_Click(object sender, RoutedEventArgs e)
         {
-            Turno ventanaTurno= new Turno();
+            w_Turno ventanaTurno= new w_Turno();
             ventanaTurno.ShowDialog();
 
         }

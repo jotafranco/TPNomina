@@ -5,10 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TPNomina"
         mc:Ignorable="d"
-        Title="Vacaciones" Height="450" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="Vacaciones" Height="550" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Canvas>
         <GroupBox Header="Pedidos" Width="774" Canvas.Left="10" Height="374">
             <DataGrid Name="dgVacaciones"/>
         </GroupBox>
+        <Button Click="btnAprobar_Click" x:Name="btnAprobar" Content="Aprobar" Canvas.Left="416" Canvas.Top="423" Width="117"/>
+        <Button Click="btnRechazar_Click" x:Name="btnRechazar" Content="Rechazar" Canvas.Left="238" Canvas.Top="423" Width="97"/>
+
     </Canvas>
 </Window>

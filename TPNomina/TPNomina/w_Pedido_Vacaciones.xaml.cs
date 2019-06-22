@@ -35,5 +35,45 @@ namespace TPNomina
         {
             cargarGrillaVacaciones();
         }
+
+        private void btnAprobar_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (dgVacaciones.SelectedItem != null)
+            {
+                Vacaciones V = (Vacaciones)dgVacaciones.SelectedItem;
+
+
+                if (V.Estado.Equals("Pendiente"))
+                    V.Estado = "Aprobado";
+                else
+                    MessageBox.Show("La operacion no es valida");
+
+
+                Datos.Entry(V).State = System.Data.Entity.EntityState.Modified;
+                Datos.SaveChanges();
+
+            }
+
+        }
+
+        private void btnRechazar_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgVacaciones.SelectedItem != null)
+            {
+                Vacaciones V = (Vacaciones)dgVacaciones.SelectedItem;
+
+
+                if (V.Estado.Equals("Pendiente"))
+                    V.Estado = "Rechazado";
+                else
+                    MessageBox.Show("La operacion no es valida");
+
+
+                Datos.Entry(V).State = System.Data.Entity.EntityState.Modified;
+                Datos.SaveChanges();
+
+            }
+        }
     }
 }

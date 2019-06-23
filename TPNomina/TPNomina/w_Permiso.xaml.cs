@@ -46,5 +46,45 @@ namespace TPNomina
         {
             CargarDatosGrilla();
         }
+
+        private void btnAprobar_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgPermisos.SelectedItem != null)
+            {
+                Permisos P = (Permisos)dgPermisos.SelectedItem;
+
+
+                if (P.Estado.Equals("Pendiente"))
+                    P.Estado = "Aprobado";
+                else
+                    MessageBox.Show("La operacion no es valida");
+
+
+                Datos.Entry(P).State = System.Data.Entity.EntityState.Modified;
+                Datos.SaveChanges();
+                CargarDatosGrilla();
+
+            }
+
+        }
+
+        private void btnRechazar_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgPermisos.SelectedItem != null)
+            {
+                Permisos A = (Permisos)dgPermisos.SelectedItem;
+
+
+                if (A.Estado.Equals("Pendiente"))
+                    A.Estado = "Rechazado";
+                else
+                    MessageBox.Show("La operacion no es valida");
+
+
+                Datos.Entry(P).State = System.Data.Entity.EntityState.Modified;
+                Datos.SaveChanges();
+                CargarDatosGrilla();
+            }
+        }
     }
 }

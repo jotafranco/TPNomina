@@ -9,8 +9,13 @@
         Title="Consulta de Permisos" Height="400" Width="500" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
         <GroupBox Header="Permisos Existentes" Canvas.Left="10" Canvas.Top="256" Height="360" Width="466" RenderTransformOrigin="0.5,0.5">
-            <DataGrid Name="dgPermisos"  >
+            <DataGrid Name="dgPermisos" Margin="0,0,0,93"  >
             </DataGrid>
-        </GroupBox>
+                 </GroupBox>
+        <Canvas>
+            <Button x:Name="btnAprobar" Content="Aprobar" Canvas.Left="105" Canvas.Top="308" Width="75" Click="btnAprobar_Click"/>
+            <Button x:Name="btnRechazar" Content="Rechazar" Canvas.Left="282" Canvas.Top="308" Width="75" Click="btnRechazar_Click"/>
+
+        </Canvas>
     </Grid>
 </Window>

@@ -59,6 +59,8 @@ namespace TPNomina
                     emp.Fecha_Nacimiento = Convert.ToDateTime(dtpFechaNacimiento.SelectedDate);
                     emp.Fecha_Incorporacion = dtpFechaIncorporacion.SelectedDate;
                     emp.Imagen_Perfil = foto.Source.ToString();
+                    emp.Turno = (Turno)cboTurno.SelectedItem;
+
 
                     //Guardamos los datos ingresados
 
@@ -108,6 +110,13 @@ namespace TPNomina
                 return false;
             }
             
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            cboTurno.ItemsSource = datos.Turno.ToList();
+            cboTurno.DisplayMemberPath = "Observacion";
+            cboTurno.SelectedValuePath = "Id_Turno";
         }
     }
 }

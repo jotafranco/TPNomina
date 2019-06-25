@@ -33,13 +33,7 @@ namespace TPNomina
             cboEmpleado.SelectedValuePath = "Id_Empleado";
             if (cboEmpleado.SelectedItem != null)
             {
-
-                Empleado salario = new Empleado();
-
-
-                //salario.Salario_Basico = Convert.ToInt32(txtSalarioAnterior.Text);
-                //txtSalarioAnterior.Text = cboEmpleado.SelectedItem.ToString();
-                   
+                 
             }
             CargarDatosGrilla();
         }

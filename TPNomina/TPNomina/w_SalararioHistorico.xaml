@@ -1,0 +1,25 @@
+﻿<Window x:Class="TPNomina.w_SalararioHistorico"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TPNomina"
+        mc:Ignorable="d"
+        Title="w_SalararioHistorico" Height="450" Width="800" Loaded="Window_Loaded">
+    <Canvas>
+        <Label Content="Id salario" HorizontalAlignment="Left" Margin="77,38,0,0" VerticalAlignment="Top"/>
+        <Label Content="Empleado" HorizontalAlignment="Left" Margin="77,89,0,0" VerticalAlignment="Top"/>
+        <Label Content="Salario Actual" HorizontalAlignment="Left" Margin="77,156,0,0" VerticalAlignment="Top"/>
+        <Label Content="Salario Nuevo" HorizontalAlignment="Left" Margin="77,216,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fecha" HorizontalAlignment="Left" Margin="77,280,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtIdSalario"  HorizontalAlignment="Left" Height="23" Margin="177,38,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtSalarioAnterior" HorizontalAlignment="Left" Height="23" Margin="177,156,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtSalario" HorizontalAlignment="Left" Height="23" Margin="177,216,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
+        <DatePicker Name="dtFecha"  HorizontalAlignment="Left" Margin="177,280,0,0" VerticalAlignment="Top" Width="118"/>
+        <DataGrid MouseDoubleClick="DgSalario_MouseDoubleClick" Name="dgSalario" HorizontalAlignment="Left" Height="268" Margin="411,37,0,0" VerticalAlignment="Top" Width="257"/>
+        <Button Click="BtnGuardar_Click" Name="btnGuardar"  Content="Guardar" HorizontalAlignment="Left" Margin="411,330,0,0" VerticalAlignment="Top" Width="104"/>
+        <ComboBox Name="cboEmpleado" HorizontalAlignment="Left" Margin="177,89,0,0" VerticalAlignment="Top" Width="120"/>
+
+
+    </Canvas>
+</Window>

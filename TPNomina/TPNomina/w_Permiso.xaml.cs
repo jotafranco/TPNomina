@@ -60,8 +60,8 @@ namespace TPNomina
                     MessageBox.Show("La operacion no es valida");
 
 
-                Datos.Entry(P).State = System.Data.Entity.EntityState.Modified;
-                Datos.SaveChanges();
+                datos.Entry(P).State = System.Data.Entity.EntityState.Modified;
+                datos.SaveChanges();
                 CargarDatosGrilla();
 
             }
@@ -81,8 +81,8 @@ namespace TPNomina
                     MessageBox.Show("La operacion no es valida");
 
 
-                Datos.Entry(P).State = System.Data.Entity.EntityState.Modified;
-                Datos.SaveChanges();
+                datos.Entry(A).State = System.Data.Entity.EntityState.Modified;
+                datos.SaveChanges();
                 CargarDatosGrilla();
             }
         }

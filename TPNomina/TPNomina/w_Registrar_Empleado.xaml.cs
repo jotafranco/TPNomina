@@ -115,7 +115,7 @@ namespace TPNomina
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cboTurno.ItemsSource = datos.Turno.ToList();
-            cboTurno.DisplayMemberPath = "Observacion";
+            cboTurno.DisplayMemberPath = "Observaciones";
             cboTurno.SelectedValuePath = "Id_Turno";
         }
     }

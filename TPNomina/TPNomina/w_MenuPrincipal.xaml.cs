@@ -70,5 +70,11 @@ namespace TPNomina
             w_Pedido_Vacaciones ventana_vacaciones = new w_Pedido_Vacaciones();
             ventana_vacaciones.ShowDialog();
         }
+
+        private void ModificacionSueldo_Click(object sender, RoutedEventArgs e)
+        {
+            w_SalararioHistorico ventanaSalario = new w_SalararioHistorico();
+            ventanaSalario.ShowDialog();
+        }
     }
 }

@@ -60,6 +60,7 @@ namespace TPNomina
                     empSalarioHistorico.Salario_Basico_Anterior = salarioAnterior;
                     empSalarioHistorico.Salario_Basico_Nuevo = int.Parse(txtSalario.Text);
                     empSalarioHistorico.Fecha_Hora = DateTime.Now;
+                    empSalarioHistorico.Usuario_Id = int.Parse(Global.user);
                     //Falta guardar el Usuario para que no genero conflicto, al eliminar o mejor comentar el try catch se puede ver el error
                 //empSalarioHistorico.Usuario_Id = 
 
@@ -77,21 +78,8 @@ namespace TPNomina
             }
             catch
             {
-                MessageBox.Show("Revisa bien tú código kapo XDXDXDXDXD");
+                MessageBox.Show("Ha ocurrido un error");
             }
-
-                //    EmpleadoSeleccionada.Salario_Basico = Convert.ToInt32(txtSalarioAnterior.Text);
-                //    EmpleadoSeleccionada =  (Empleado)cboEmpleado.SelectedItem;
-
-
-            //    Empleado_Salario_Historico ESHSeleccionada = (Empleado_Salario_Historico)dgSalario.SelectedItem;
-            //    ESHSeleccionada.Salario_Basico_Nuevo = Convert.ToInt32(txtSalario.Text);
-            //    ESHSeleccionada.Fecha_Hora = DateTime.Now;
-            //    EmpleadoSeleccionada.Salario_Basico = Convert.ToInt32(txtSalario.Text);
-
-            //    
-            //}
-            //
         }
 
         private void DgSalario_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -104,25 +92,6 @@ namespace TPNomina
                 txtSalarioAnterior.Text = emp.Salario_Basico.ToString();
             }
         }
-        //Cambiar el botón de buscar o eliminar
-        private void BtnBuscar_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            { 
-                if(txtEmpleado.Text != "")
-                {
-                    Empleado emp = new Empleado();
-                
-                    if (txtEmpleado.Text == emp.Nro_Documento)
-                    {
-                        txtSalarioAnterior.Text = emp.Salario_Basico.ToString();
-                    }
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Ha ocurrido un error");
-            }
-        }
+        
     }
 }

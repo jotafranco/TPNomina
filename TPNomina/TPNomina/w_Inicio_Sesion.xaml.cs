@@ -61,10 +61,14 @@ namespace TPNomina
             else
             {
                 w_MenuPrincipal ventanaMenu = new w_MenuPrincipal();
+                Global.user = cboUsuario.SelectedValue.ToString();
                 ventanaMenu.ShowDialog();
                 MessageBox.Show("Adiositoooo!!!");
             }
+            
         }
+
+        
     }
 }
 

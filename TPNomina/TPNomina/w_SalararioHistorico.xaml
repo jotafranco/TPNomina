@@ -19,7 +19,6 @@
         <DataGrid MouseDoubleClick="DgSalario_MouseDoubleClick" Name="dgSalario" HorizontalAlignment="Left" Height="268" Margin="411,37,0,0" VerticalAlignment="Top" Width="257"/>
         <Button Click="BtnGuardar_Click" Name="btnGuardar"  Content="Guardar" HorizontalAlignment="Left" Margin="411,330,0,0" VerticalAlignment="Top" Width="104"/>
         <TextBox Name="txtEmpleado" IsReadOnly="True" Height="23" Canvas.Left="177" TextWrapping="Wrap" Canvas.Top="89" Width="120"/>
-        <Button Name="btnBuscar" Click="BtnBuscar_Click" Content="Buscar" Canvas.Left="570" Canvas.Top="330" Width="75"/>
 
 
     </Canvas>

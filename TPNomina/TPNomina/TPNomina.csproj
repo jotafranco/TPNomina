@@ -86,6 +86,7 @@
     <Compile Include="Empleado_Salario_Historico.cs">
       <DependentUpon>Modelo_Datos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="Liquidacion_Mensual.cs">
       <DependentUpon>Modelo_Datos.tt</DependentUpon>
     </Compile>

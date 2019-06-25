@@ -28,44 +28,101 @@ namespace TPNomina
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            cboEmpleado.ItemsSource = Datos.Empleado.ToList();
-            cboEmpleado.DisplayMemberPath = "Nombres";
-            cboEmpleado.SelectedValuePath = "Id_Empleado";
-            if (cboEmpleado.SelectedItem != null)
-            {
+            //cboEmpleado.ItemsSource = Datos.Empleado.ToList();
+            //cboEmpleado.DisplayMemberPath = "Nombres";
+            //cboEmpleado.SelectedValuePath = "Id_Empleado";
+            //if (cboEmpleado.SelectedItem != null)
+            //{
                  
-            }
+            //}
             CargarDatosGrilla();
         }
 
         private void CargarDatosGrilla()
         {
-            dgSalario.ItemsSource = Datos.Empleado_Salario_Historico.ToList();
+            dgSalario.ItemsSource = Datos.Empleado.ToList();
         }
 
         private void BtnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (dgSalario.SelectedItem != null)
-            {
-                Empleado EmpleadoSeleccionada = (Empleado)dgSalario.SelectedItem;
-                EmpleadoSeleccionada.Salario_Basico = Convert.ToInt32(txtSalarioAnterior.Text);
-                EmpleadoSeleccionada =  (Empleado)cboEmpleado.SelectedItem;
+            int salarioAnterior;
+            Empleado EmpleadoSeleccionada = (Empleado)dgSalario.SelectedItem;
+            Empleado_Salario_Historico empSalarioHistorico = new Empleado_Salario_Historico();
+            try { 
+                if (dgSalario.SelectedItem != null)
+                {
+                    salarioAnterior = int.Parse(txtSalarioAnterior.Text);
+                //Salario Actual del Empleado
+                    EmpleadoSeleccionada.Salario_Basico = int.Parse(txtSalario.Text);
 
+                //Histórico de salarios
+                    empSalarioHistorico.Empleado_Id = EmpleadoSeleccionada.Id_Empleado;
+                    empSalarioHistorico.Salario_Basico_Anterior = salarioAnterior;
+                    empSalarioHistorico.Salario_Basico_Nuevo = int.Parse(txtSalario.Text);
+                    empSalarioHistorico.Fecha_Hora = DateTime.Now;
+                    //Falta guardar el Usuario para que no genero conflicto, al eliminar o mejor comentar el try catch se puede ver el error
+                //empSalarioHistorico.Usuario_Id = 
 
-                Empleado_Salario_Historico ESHSeleccionada = (Empleado_Salario_Historico)dgSalario.SelectedItem;
-                ESHSeleccionada.Salario_Basico_Nuevo = Convert.ToInt32(txtSalario.Text);
-                ESHSeleccionada.Fecha_Hora = DateTime.Now;
-                EmpleadoSeleccionada.Salario_Basico = Convert.ToInt32(txtSalario.Text);
+                    Datos.Entry(EmpleadoSeleccionada).State = System.Data.Entity.EntityState.Modified;
+                    Datos.Empleado_Salario_Historico.Add(empSalarioHistorico);
+                    Datos.SaveChanges();
+                    CargarDatosGrilla();
 
-                CargarDatosGrilla();
+                    MessageBox.Show("Datos guardados :)");
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar primeramente la persona a modificar ");
+                }
             }
-            else
-                MessageBox.Show("Debe seleccionar primeramente la persona a modificar ");
+            catch
+            {
+                MessageBox.Show("Revisa bien tú código kapo XDXDXDXDXD");
+            }
+
+                //    EmpleadoSeleccionada.Salario_Basico = Convert.ToInt32(txtSalarioAnterior.Text);
+                //    EmpleadoSeleccionada =  (Empleado)cboEmpleado.SelectedItem;
+
+
+            //    Empleado_Salario_Historico ESHSeleccionada = (Empleado_Salario_Historico)dgSalario.SelectedItem;
+            //    ESHSeleccionada.Salario_Basico_Nuevo = Convert.ToInt32(txtSalario.Text);
+            //    ESHSeleccionada.Fecha_Hora = DateTime.Now;
+            //    EmpleadoSeleccionada.Salario_Basico = Convert.ToInt32(txtSalario.Text);
+
+            //    
+            //}
+            //
         }
 
         private void DgSalario_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-             
+            //Muestra los datos de la tabla de Empleados
+             if(dgSalario.SelectedItem != null)
+            {
+                Empleado emp = (Empleado)dgSalario.SelectedItem;
+                txtEmpleado.Text = emp.Nombres;
+                txtSalarioAnterior.Text = emp.Salario_Basico.ToString();
+            }
+        }
+        //Cambiar el botón de buscar o eliminar
+        private void BtnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            { 
+                if(txtEmpleado.Text != "")
+                {
+                    Empleado emp = new Empleado();
+                
+                    if (txtEmpleado.Text == emp.Nro_Documento)
+                    {
+                        txtSalarioAnterior.Text = emp.Salario_Basico.ToString();
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error");
+            }
         }
     }
 }

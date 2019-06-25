@@ -12,13 +12,14 @@
         <Label Content="Salario Actual" HorizontalAlignment="Left" Margin="77,156,0,0" VerticalAlignment="Top"/>
         <Label Content="Salario Nuevo" HorizontalAlignment="Left" Margin="77,216,0,0" VerticalAlignment="Top"/>
         <Label Content="Fecha" HorizontalAlignment="Left" Margin="77,280,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="txtIdSalario"  HorizontalAlignment="Left" Height="23" Margin="177,38,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="txtSalarioAnterior" HorizontalAlignment="Left" Height="23" Margin="177,156,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtIdSalario" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="177,38,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtSalarioAnterior" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="177,156,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
         <TextBox Name="txtSalario" HorizontalAlignment="Left" Height="23" Margin="177,216,0,0" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Width="120"/>
         <DatePicker Name="dtFecha"  HorizontalAlignment="Left" Margin="177,280,0,0" VerticalAlignment="Top" Width="118"/>
         <DataGrid MouseDoubleClick="DgSalario_MouseDoubleClick" Name="dgSalario" HorizontalAlignment="Left" Height="268" Margin="411,37,0,0" VerticalAlignment="Top" Width="257"/>
         <Button Click="BtnGuardar_Click" Name="btnGuardar"  Content="Guardar" HorizontalAlignment="Left" Margin="411,330,0,0" VerticalAlignment="Top" Width="104"/>
-        <ComboBox Name="cboEmpleado" HorizontalAlignment="Left" Margin="177,89,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtEmpleado" IsReadOnly="True" Height="23" Canvas.Left="177" TextWrapping="Wrap" Canvas.Top="89" Width="120"/>
+        <Button Name="btnBuscar" Click="BtnBuscar_Click" Content="Buscar" Canvas.Left="570" Canvas.Top="330" Width="75"/>
 
 
     </Canvas>

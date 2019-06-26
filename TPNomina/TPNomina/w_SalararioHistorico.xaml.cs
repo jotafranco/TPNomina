@@ -42,16 +42,16 @@ namespace TPNomina
         {
             dgSalario.ItemsSource = Datos.Empleado.ToList();
         }
-        private void validarSalario()
+        private bool validarSalario()
         {
             if
                (int.Parse(txtSalario.Text) > int.Parse(txtSalarioAnterior.Text))
             {
-                MessageBox.Show("Salario Guardado");
+                return false;
             }
             else
             {
-                MessageBox.Show("Salario Nuevo debe ser Mayor a Salario Anterior");
+                return true;
             }
 
         }
@@ -64,25 +64,32 @@ namespace TPNomina
             try { 
                 if (dgSalario.SelectedItem != null)
                 {
-                    salarioAnterior = int.Parse(txtSalarioAnterior.Text);
-                //Salario Actual del Empleado
-                    EmpleadoSeleccionada.Salario_Basico = int.Parse(txtSalario.Text);
+                    if (validarSalario() == false)
+                    {
+                        salarioAnterior = int.Parse(txtSalarioAnterior.Text);
+                        //Salario Actual del Empleado
+                        EmpleadoSeleccionada.Salario_Basico = int.Parse(txtSalario.Text);
 
-                //Histórico de salarios
-                    empSalarioHistorico.Empleado_Id = EmpleadoSeleccionada.Id_Empleado;
-                    empSalarioHistorico.Salario_Basico_Anterior = salarioAnterior;
-                    empSalarioHistorico.Salario_Basico_Nuevo = int.Parse(txtSalario.Text);
-                    empSalarioHistorico.Fecha_Hora = DateTime.Now;
-                    empSalarioHistorico.Usuario_Id = int.Parse(Global.user);
-                    //Falta guardar el Usuario para que no genero conflicto, al eliminar o mejor comentar el try catch se puede ver el error
-                    //empSalarioHistorico.Usuario_Id = 
-                    validarSalario();
-                    Datos.Entry(EmpleadoSeleccionada).State = System.Data.Entity.EntityState.Modified;
-                    Datos.Empleado_Salario_Historico.Add(empSalarioHistorico);
-                    Datos.SaveChanges();
-                    CargarDatosGrilla();
+                        //Histórico de salarios
+                        empSalarioHistorico.Empleado_Id = EmpleadoSeleccionada.Id_Empleado;
+                        empSalarioHistorico.Salario_Basico_Anterior = salarioAnterior;
+                        empSalarioHistorico.Salario_Basico_Nuevo = int.Parse(txtSalario.Text);
+                        empSalarioHistorico.Fecha_Hora = DateTime.Now;
+                        empSalarioHistorico.Usuario_Id = int.Parse(Global.user);
+                        //Falta guardar el Usuario para que no genero conflicto, al eliminar o mejor comentar el try catch se puede ver el error
+                        //empSalarioHistorico.Usuario_Id = 
 
-                    MessageBox.Show("Datos guardados :)");
+                        Datos.Entry(EmpleadoSeleccionada).State = System.Data.Entity.EntityState.Modified;
+                        Datos.Empleado_Salario_Historico.Add(empSalarioHistorico);
+                        Datos.SaveChanges();
+                        CargarDatosGrilla();
+
+                        MessageBox.Show("Datos guardados :)");
+                    }
+                    else
+                    {
+                        MessageBox.Show("El salario debe ser mayor al actual");
+                    }
                 }
                 else
                 {

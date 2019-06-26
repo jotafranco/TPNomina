@@ -42,8 +42,21 @@ namespace TPNomina
         {
             dgSalario.ItemsSource = Datos.Empleado.ToList();
         }
+        private void validarSalario()
+        {
+            if
+               (int.Parse(txtSalario.Text) > int.Parse(txtSalarioAnterior.Text))
+            {
+                MessageBox.Show("Salario Guardado");
+            }
+            else
+            {
+                MessageBox.Show("Salario Nuevo debe ser Mayor a Salario Anterior");
+            }
 
-        private void BtnGuardar_Click(object sender, RoutedEventArgs e)
+        }
+
+    private void BtnGuardar_Click(object sender, RoutedEventArgs e)
         {
             int salarioAnterior;
             Empleado EmpleadoSeleccionada = (Empleado)dgSalario.SelectedItem;
@@ -62,8 +75,8 @@ namespace TPNomina
                     empSalarioHistorico.Fecha_Hora = DateTime.Now;
                     empSalarioHistorico.Usuario_Id = int.Parse(Global.user);
                     //Falta guardar el Usuario para que no genero conflicto, al eliminar o mejor comentar el try catch se puede ver el error
-                //empSalarioHistorico.Usuario_Id = 
-
+                    //empSalarioHistorico.Usuario_Id = 
+                    validarSalario();
                     Datos.Entry(EmpleadoSeleccionada).State = System.Data.Entity.EntityState.Modified;
                     Datos.Empleado_Salario_Historico.Add(empSalarioHistorico);
                     Datos.SaveChanges();
@@ -81,7 +94,7 @@ namespace TPNomina
                 MessageBox.Show("Ha ocurrido un error");
             }
         }
-
+        
         private void DgSalario_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             //Muestra los datos de la tabla de Empleados

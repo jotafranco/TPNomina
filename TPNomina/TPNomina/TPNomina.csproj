@@ -129,6 +129,9 @@
     <Compile Include="w_Inicio_Sesion.xaml.cs">
       <DependentUpon>w_Inicio_Sesion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="w_LiquidacionSalarios.xaml.cs">
+      <DependentUpon>w_LiquidacionSalarios.xaml</DependentUpon>
+    </Compile>
     <Compile Include="w_MenuPrincipal.xaml.cs">
       <DependentUpon>w_MenuPrincipal.xaml</DependentUpon>
     </Compile>
@@ -168,6 +171,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="w_Inicio_Sesion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_LiquidacionSalarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

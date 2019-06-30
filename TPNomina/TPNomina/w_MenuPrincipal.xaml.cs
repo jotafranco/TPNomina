@@ -76,5 +76,12 @@ namespace TPNomina
             w_SalararioHistorico ventanaSalario = new w_SalararioHistorico();
             ventanaSalario.ShowDialog();
         }
+
+        private void MenuLiquidacion_Click(object sender, RoutedEventArgs e)
+        {
+            w_LiquidacionSalarios ventanaLiquidacion = new w_LiquidacionSalarios();
+            ventanaLiquidacion.ShowDialog();
+
+        }
     }
 }

@@ -15,6 +15,7 @@
             <MenuItem Header="Turno" Name="MenuTurno" Click="MenuTurno_Click"/>
             <MenuItem Header="Vacaciones" Name="MenuVacaciones" Click="MenuVacaciones_Click"/>
             <MenuItem Header="Modificación de Sueldo" Name="MenuModificacionSueldo" Click="ModificacionSueldo_Click"/>
+            <MenuItem Header="Liquidacion" Name="MenuLiquidacion" Click="MenuLiquidacion_Click"/>
             <Separator />
             <MenuItem Header="Salir"  Name="MenuSalir" Click="MenuSalir_Click"/>
         </MenuItem>

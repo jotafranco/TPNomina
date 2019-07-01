@@ -59,8 +59,8 @@ namespace TPNomina
 
         private void btnAgregarConcepto_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 Liquidacion_Mensual_Detalle LMD = new Liquidacion_Mensual_Detalle();
                 //FALTA VALIDAR MONTO > 0, MOSTRAR EN TIPO SI ES POSITIVO O NEGATIVO
                 //VALIDAR EN MONTO QUE SI ES NEGATIVO MULTIPLICAR POR -1
@@ -80,11 +80,8 @@ namespace TPNomina
                             if(cboLiquidacion.SelectedItem != null)
                             {
                                 Liquidacion_Mensual varEst = (Liquidacion_Mensual)cboLiquidacion.SelectedItem;
-                                /*
-                                 REVISAR
-                                 */
-                                //Por alguna razón trae null, tal vez no consulta con la base de datos
-                                if (varEst.Estado != "A")//Estado=NULL
+                              
+                                if (varEst.Estado != "A")
                                 {
                                     MessageBox.Show("El estado de la Liquidacion debe ser Activo");
                                 }else
@@ -117,14 +114,14 @@ namespace TPNomina
                     MessageBox.Show("Falta Campos");
                 }
 
-            //}catch
-            //{
+        }catch
+            {
 
-            //    MessageBox.Show("Error, Algo salió mal xDDDD");
+                MessageBox.Show("Error, Algo salió mal xDDDD");
 
-            //}
+            }
 
-        }
+}
 
         private void btnEliminarConcepto_Click(object sender, RoutedEventArgs e)
         {

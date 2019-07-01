@@ -89,7 +89,7 @@ namespace TPNomina
                                     MessageBox.Show("El estado de la Liquidacion debe ser Activo");
                                 }else
                                 {
-                                    LMD.Liquidacion_Id = int.Parse(cboLiquidacion.SelectedItem);
+                                    LMD.Liquidacion_Id = varEst.Id_Liquidacion;
                                     LMD.Empleado = (Empleado)cboEmpleado.SelectedItem;
                                     LMD.Concepto = (Concepto)cboConcepto.SelectedItem;
                                     LMD.Monto = int.Parse(txtMonto.Text);

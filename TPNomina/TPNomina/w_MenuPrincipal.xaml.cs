@@ -83,5 +83,11 @@ namespace TPNomina
             ventanaLiquidacion.ShowDialog();
 
         }
+
+        private void MenuDetalleLiquidacion_Click(object sender, RoutedEventArgs e)
+        {
+            w_Detalle_Concepto ventanaDetalleConcepto = new w_Detalle_Concepto();
+            ventanaDetalleConcepto.ShowDialog();
+        }
     }
 }

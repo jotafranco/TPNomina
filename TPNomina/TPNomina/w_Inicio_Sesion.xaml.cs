@@ -62,8 +62,10 @@ namespace TPNomina
             {
                 w_MenuPrincipal ventanaMenu = new w_MenuPrincipal();
                 Global.user = cboUsuario.SelectedValue.ToString();
+                this.Hide();
                 ventanaMenu.ShowDialog();
                 MessageBox.Show("Adiositoooo!!!");
+                App.Current.Shutdown();
             }
             
         }

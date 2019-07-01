@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TPNomina"
         mc:Ignorable="d"
-        Title="w_Detalle_Concepto" Height="567" Width="782" Loaded="Window_Loaded">
+        Title="w_Detalle_Concepto" Height="567" Width="782" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Canvas>
         <Label  Content="Empleado" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="30" Canvas.Top="107"/>
         <Label  Content="Concepto" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="32" Canvas.Top="157"/>

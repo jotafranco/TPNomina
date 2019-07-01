@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TPNomina"
         mc:Ignorable="d"
-        Title="MenuPrincipal" Height="450" Width="800">
+        Title="MenuPrincipal" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Menu Name="MenuPrincipal">
         <MenuItem Header="Opciones">
             <MenuItem Header="Anticipo"  Name="MenuAnticipo"  Click="MenuAnticipo_Click" />
@@ -15,7 +15,10 @@
             <MenuItem Header="Turno" Name="MenuTurno" Click="MenuTurno_Click"/>
             <MenuItem Header="Vacaciones" Name="MenuVacaciones" Click="MenuVacaciones_Click"/>
             <MenuItem Header="Modificación de Sueldo" Name="MenuModificacionSueldo" Click="ModificacionSueldo_Click"/>
-            <MenuItem Header="Liquidacion" Name="MenuLiquidacion" Click="MenuLiquidacion_Click"/>
+            <MenuItem Header="Liquidacion">
+                <MenuItem Header="Cabecera" Name="MenuLiquidacion" Click="MenuLiquidacion_Click"/>
+                <MenuItem Header="Detalle" Name="MenuDetalleLiquidacion" Click="MenuDetalleLiquidacion_Click"/>
+            </MenuItem>
             <Separator />
             <MenuItem Header="Salir"  Name="MenuSalir" Click="MenuSalir_Click"/>
         </MenuItem>

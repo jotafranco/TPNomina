@@ -63,14 +63,10 @@ namespace TPNomina
             try
             {
                 Liquidacion_Mensual_Detalle LMD = new Liquidacion_Mensual_Detalle();
-                //FALTA VALIDAR MONTO > 0, MOSTRAR EN TIPO SI ES POSITIVO O NEGATIVO
-                //VALIDAR EN MONTO QUE SI ES NEGATIVO MULTIPLICAR POR -1 // YA ESTÁ PERO TIENE QUE ESTAR ESCRITO EN LA MISMA FORMA QUE EN LA BASE DE DATOS concepto.Tipo == "Negativo"
+                
                 //SUMAR LOS CONCEPTOS EN UNA VARIABLE PARA 
                 //SUMAR O RESTAR AL MONTO DE LIQUIDACION FINAL 
                 //AFKSGGDKS T_T
-
-
-
 
                 if (txtMonto.Text != " ")
                 {
@@ -81,35 +77,39 @@ namespace TPNomina
                             if (cboLiquidacion.SelectedItem != null)
                             {
                                 Liquidacion_Mensual varEst = (Liquidacion_Mensual)cboLiquidacion.SelectedItem;
-
-
-                                if (varEst.Estado != "A")
+                                if (Convert.ToInt16(txtMonto.Text) <= 0)
                                 {
-                                    MessageBox.Show("El estado de la Liquidacion debe ser Activo");
+                                    MessageBox.Show("El monto debe ser mayor a 0");
                                 }
                                 else
                                 {
-                                    Concepto concepto = (Concepto)cboConcepto.SelectedItem;
-                                    LMD.Liquidacion_Id = varEst.Id_Liquidacion;
-                                    LMD.Empleado = (Empleado)cboEmpleado.SelectedItem;
-                                    LMD.Concepto = (Concepto)cboConcepto.SelectedItem;
-
-                                    if (concepto.Tipo == "negativo")
+                                    if (varEst.Estado != "A")
                                     {
-                                        LMD.Monto = ((int.Parse(txtMonto.Text)) * -1);
-
+                                        MessageBox.Show("El estado de la Liquidacion debe ser Activo");
                                     }
                                     else
                                     {
-                                        LMD.Monto = int.Parse(txtMonto.Text);
+                                        Concepto concepto = (Concepto)cboConcepto.SelectedItem;
+                                        LMD.Liquidacion_Id = varEst.Id_Liquidacion;
+                                        LMD.Empleado = (Empleado)cboEmpleado.SelectedItem;
+                                        LMD.Concepto = (Concepto)cboConcepto.SelectedItem;
+
+                                        if (concepto.Tipo == "Negativo")
+                                        {
+                                            LMD.Monto = ((int.Parse(txtMonto.Text)) * -1);
+
+                                        }
+                                        else
+                                        {
+                                            LMD.Monto = int.Parse(txtMonto.Text);
+                                        }
+
+                                        Datos.Liquidacion_Mensual_Detalle.Add(LMD);
+                                        Datos.SaveChanges();
+                                        CargarDatosGrilla();
+                                        LimpiarDatos();
+                                        MessageBox.Show("Datos guardados");
                                     }
-
-                                    Datos.Liquidacion_Mensual_Detalle.Add(LMD);
-                                    Datos.SaveChanges();
-                                    CargarDatosGrilla();
-                                    MessageBox.Show("Datos guardados");
-                                    
-
                                 }
 
                             }
@@ -133,10 +133,7 @@ namespace TPNomina
                 {
                     MessageBox.Show("Falta Campos");
                 }
-                LimpiarDatos();
-
-
-        }
+            }
             catch
             {
 
@@ -145,7 +142,7 @@ namespace TPNomina
             }
 
 
-}
+        }
 
         private void btnEliminarConcepto_Click(object sender, RoutedEventArgs e)
         {

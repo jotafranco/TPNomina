@@ -24,7 +24,12 @@ namespace TPNomina
             this.Permisos = new HashSet<Permisos>();
             this.Vacaciones = new HashSet<Vacaciones>();
         }
-    
+
+        public override string ToString()
+        {
+            return string.Format(Nombres);
+        }
+
         public int Id_Empleado { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }

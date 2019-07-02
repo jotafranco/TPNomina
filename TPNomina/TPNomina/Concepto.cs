@@ -19,7 +19,12 @@ namespace TPNomina
         {
             this.Liquidacion_Mensual_Detalle = new HashSet<Liquidacion_Mensual_Detalle>();
         }
-    
+
+        public override string ToString()
+        {
+            return string.Format(Tipo);
+        }
+
         public int Id_Concepto { get; set; }
         public string Descripcion { get; set; }
         public string Tipo { get; set; }

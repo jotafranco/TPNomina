@@ -41,6 +41,7 @@ namespace TPNomina
             cboEmpleado.ItemsSource = Datos.Empleado.ToList();
             cboEmpleado.DisplayMemberPath = "Nombres";
             cboEmpleado.SelectedValuePath = "Id_Empleado";
+            CargarDatosGrilla();
 
         }
 
@@ -63,7 +64,7 @@ namespace TPNomina
             {
                 Liquidacion_Mensual_Detalle LMD = new Liquidacion_Mensual_Detalle();
                 //FALTA VALIDAR MONTO > 0, MOSTRAR EN TIPO SI ES POSITIVO O NEGATIVO
-                //VALIDAR EN MONTO QUE SI ES NEGATIVO MULTIPLICAR POR -1
+                //VALIDAR EN MONTO QUE SI ES NEGATIVO MULTIPLICAR POR -1 // YA ESTÁ PERO TIENE QUE ESTAR ESCRITO EN LA MISMA FORMA QUE EN LA BASE DE DATOS concepto.Tipo == "Negativo"
                 //SUMAR LOS CONCEPTOS EN UNA VARIABLE PARA 
                 //SUMAR O RESTAR AL MONTO DE LIQUIDACION FINAL 
                 //AFKSGGDKS T_T
@@ -106,7 +107,8 @@ namespace TPNomina
                                     Datos.Liquidacion_Mensual_Detalle.Add(LMD);
                                     Datos.SaveChanges();
                                     CargarDatosGrilla();
-                                    LimpiarDatos();
+                                    MessageBox.Show("Datos guardados");
+                                    
 
                                 }
 
@@ -131,18 +133,19 @@ namespace TPNomina
                 {
                     MessageBox.Show("Falta Campos");
                 }
-               
+                LimpiarDatos();
 
-            }
+
+        }
             catch
             {
 
-                MessageBox.Show("Error, Algo salió mal xDDDD");
+                MessageBox.Show("Error, tal vez la liquidación y el empleado son iguales");
 
             }
-            
 
-        }
+
+}
 
         private void btnEliminarConcepto_Click(object sender, RoutedEventArgs e)
         {
@@ -166,9 +169,9 @@ namespace TPNomina
 
         private void LimpiarDatos()
         {
-            cboConcepto.Items.Clear();
-            cboEmpleado.Items.Clear();
-            cboLiquidacion.Items.Clear();
+            //cboConcepto.SelectedValue = null; //ERROR AL LLAMAR EL MÉTODO EN ESTA LINEA
+            cboEmpleado.SelectedValue = null;
+            cboLiquidacion.SelectedValue = null;
             txtMonto.Text = string.Empty;
             txtTipo.Text = string.Empty;
             

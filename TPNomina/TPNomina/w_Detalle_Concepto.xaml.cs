@@ -29,7 +29,7 @@ namespace TPNomina
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cboLiquidacion.ItemsSource = Datos.Liquidacion_Mensual.ToList();
-            cboLiquidacion.DisplayMemberPath = "Mes";
+            //cboLiquidacion.DisplayMemberPath = "Mes" ;
             cboLiquidacion.SelectedValuePath = "Id_Liquidacion";
 
             cboConcepto.ItemsSource = Datos.Concepto.ToList();

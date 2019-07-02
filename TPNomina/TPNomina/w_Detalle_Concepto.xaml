@@ -16,7 +16,17 @@
         <DataGrid x:Name="dgConcepto" Height="336" Canvas.Left="400" Canvas.Top="38" Width="344"/>
         <Button x:Name="btnAgregarConcepto" Content="Agregar " HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="103" Click="btnAgregarConcepto_Click" Canvas.Left="56" Canvas.Top="393"/>
         <Label x:Name="label" Content="Liquidacion" Canvas.Left="22" Canvas.Top="56"/>
-        <ComboBox x:Name="cboLiquidacion" Canvas.Left="108" Canvas.Top="60" Width="158"/>
+        <ComboBox x:Name="cboLiquidacion" Canvas.Left="108" Canvas.Top="60" Width="158">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  Text="{Binding Mes}"/>
+                        <TextBlock  Text="/"/>
+                        <TextBlock Text="{Binding Anho}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox >
         <Button x:Name="btnEliminarConcepto" Content="Eliminar " HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="103" Click="btnEliminarConcepto_Click" Canvas.Left="264" Canvas.Top="393"/>
         <Label x:Name="label1" Content="Tipo" Canvas.Left="56" Canvas.Top="252" RenderTransformOrigin="0.424,-0.038"/>
         <TextBox x:Name="txtTipo" Height="26" Canvas.Left="108" TextWrapping="Wrap" Text="" Canvas.Top="252" Width="158"/>

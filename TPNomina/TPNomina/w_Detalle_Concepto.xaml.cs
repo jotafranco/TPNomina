@@ -29,13 +29,13 @@ namespace TPNomina
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             cboLiquidacion.ItemsSource = Datos.Liquidacion_Mensual.ToList();
-            //cboLiquidacion.DisplayMemberPath = "Mes" ;
+        //    cboLiquidacion.DisplayMemberPath = "Mes";
             cboLiquidacion.SelectedValuePath = "Id_Liquidacion";
 
             cboConcepto.ItemsSource = Datos.Concepto.ToList();
             cboConcepto.DisplayMemberPath = "Descripcion";
             cboConcepto.SelectedValuePath = "Id_Concepto";
-            
+
 
 
             cboEmpleado.ItemsSource = Datos.Empleado.ToList();
@@ -68,66 +68,87 @@ namespace TPNomina
                 //SUMAR O RESTAR AL MONTO DE LIQUIDACION FINAL 
                 //AFKSGGDKS T_T
 
-                
-            
-       
-            if (txtMonto.Text  != " ")
-                { 
+
+
+
+                if (txtMonto.Text != " ")
+                {
                     if (cboConcepto.SelectedItem != null)
                     {
                         if (cboEmpleado.SelectedItem != null)
                         {
-                            if(cboLiquidacion.SelectedItem != null)
+                            if (cboLiquidacion.SelectedItem != null)
                             {
                                 Liquidacion_Mensual varEst = (Liquidacion_Mensual)cboLiquidacion.SelectedItem;
-                              
+
+
                                 if (varEst.Estado != "A")
                                 {
                                     MessageBox.Show("El estado de la Liquidacion debe ser Activo");
-                                }else
+                                }
+                                else
                                 {
+                                    Concepto concepto = (Concepto)cboConcepto.SelectedItem;
                                     LMD.Liquidacion_Id = varEst.Id_Liquidacion;
                                     LMD.Empleado = (Empleado)cboEmpleado.SelectedItem;
                                     LMD.Concepto = (Concepto)cboConcepto.SelectedItem;
-                                    LMD.Monto = int.Parse(txtMonto.Text);
+
+                                    if (concepto.Tipo == "negativo")
+                                    {
+                                        LMD.Monto = ((int.Parse(txtMonto.Text)) * -1);
+
+                                    }
+                                    else
+                                    {
+                                        LMD.Monto = int.Parse(txtMonto.Text);
+                                    }
 
                                     Datos.Liquidacion_Mensual_Detalle.Add(LMD);
                                     Datos.SaveChanges();
                                     CargarDatosGrilla();
+                                    LimpiarDatos();
+
                                 }
-                                
-                            }else
+
+                            }
+                            else
                             {
                                 MessageBox.Show("Falta Campos");
                             }
-                        }else
+                        }
+                        else
                         {
                             MessageBox.Show("Falta Campos");
                         }
-                    }else
+                    }
+                    else
                     {
                         MessageBox.Show("Falta Campos");
                     }
-                    
-                }else
+
+                }
+                else
                 {
                     MessageBox.Show("Falta Campos");
                 }
+               
 
-        }catch
+            }
+            catch
             {
 
                 MessageBox.Show("Error, Algo salió mal xDDDD");
 
             }
+            
 
-}
+        }
 
         private void btnEliminarConcepto_Click(object sender, RoutedEventArgs e)
         {
             if (dgConcepto.SelectedItem != null)
             {
-                Liquidacion_Mensual_Detalle DML = (Liquidacion_Mensual_Detalle)dgConcepto.SelectedItem;            
+                Liquidacion_Mensual_Detalle DML = (Liquidacion_Mensual_Detalle)dgConcepto.SelectedItem;
                 Datos.Liquidacion_Mensual_Detalle.Remove(DML);
                 Datos.SaveChanges();
                 CargarDatosGrilla();
@@ -135,6 +156,25 @@ namespace TPNomina
             else
                 MessageBox.Show("Debe seleccionar un Concepto de la grilla para eliminar!");
         }
+
+        private void cboConcepto_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Concepto concepto = (Concepto)cboConcepto.SelectedItem;
+            txtTipo.Text = concepto.Tipo;
+
+        }
+
+        private void LimpiarDatos()
+        {
+            cboConcepto.Items.Clear();
+            cboEmpleado.Items.Clear();
+            cboLiquidacion.Items.Clear();
+            txtMonto.Text = string.Empty;
+            txtTipo.Text = string.Empty;
+            
+        }
+
+
 
     }
 }

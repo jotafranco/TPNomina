@@ -11,7 +11,7 @@
         <Label  Content="Concepto" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="32" Canvas.Top="157"/>
         <Label  Content="Monto" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="47" Canvas.Top="203"/>
         <ComboBox x:Name="cboEmpleado" Height="26" Canvas.Left="108" Canvas.Top="107" Width="158"/>
-        <ComboBox x:Name="cboConcepto" Height="26" Canvas.Left="108" Canvas.Top="157" Width="158"/>
+        <ComboBox x:Name="cboConcepto" SelectionChanged="cboConcepto_SelectionChanged" Height="26" Canvas.Left="108" Canvas.Top="157" Width="158"/>
         <TextBox x:Name="txtMonto" Height="23" Canvas.Left="108" TextWrapping="Wrap" Text=" " Canvas.Top="203" Width="158"/>
         <DataGrid x:Name="dgConcepto" Height="336" Canvas.Left="400" Canvas.Top="38" Width="344"/>
         <Button x:Name="btnAgregarConcepto" Content="Agregar " HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="103" Click="btnAgregarConcepto_Click" Canvas.Left="56" Canvas.Top="393"/>

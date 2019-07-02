@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Modelo_Datos.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Modelo_Datos.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Anticipo">
           <Key>
             <PropertyRef Name="Id_Anticipo" />
@@ -24,7 +24,7 @@
           </Key>
           <Property Name="Id_Concepto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="Tipo" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Empleado">
           <Key>
@@ -119,7 +119,7 @@
           <Property Name="Fecha_Definicion" Type="date" Nullable="false" />
           <Property Name="Observaciones" Type="varchar" MaxLength="1000" />
         </EntityType>
-        <Association Name="FK__Empleado___Emple__2D27B809">
+        <Association Name="FK__Empleado___Emple__2E1BDC42">
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
           <End Role="Empleado_Salario_Historico" Type="Self.Empleado_Salario_Historico" Multiplicity="*" />
           <ReferentialConstraint>
@@ -131,7 +131,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Empleado___Usuar__2E1BDC42">
+        <Association Name="FK__Empleado___Usuar__2F10007B">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Empleado_Salario_Historico" Type="Self.Empleado_Salario_Historico" Multiplicity="*" />
           <ReferentialConstraint>
@@ -143,7 +143,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Empleado__Turno___20C1E124">
+        <Association Name="FK__Empleado__Turno___21B6055D">
           <End Role="Turno" Type="Self.Turno" Multiplicity="0..1" />
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
           <ReferentialConstraint>
@@ -155,7 +155,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Liquidaci__Conce__2A4B4B5E">
+        <Association Name="FK__Liquidaci__Conce__2B3F6F97">
           <End Role="Concepto" Type="Self.Concepto" Multiplicity="1" />
           <End Role="Liquidacion_Mensual_Detalle" Type="Self.Liquidacion_Mensual_Detalle" Multiplicity="*" />
           <ReferentialConstraint>
@@ -167,7 +167,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Liquidaci__Emple__29572725">
+        <Association Name="FK__Liquidaci__Emple__2A4B4B5E">
           <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
           <End Role="Liquidacion_Mensual_Detalle" Type="Self.Liquidacion_Mensual_Detalle" Multiplicity="*" />
           <ReferentialConstraint>
@@ -179,7 +179,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Liquidaci__Liqui__286302EC">
+        <Association Name="FK__Liquidaci__Liqui__29572725">
           <End Role="Liquidacion_Mensual" Type="Self.Liquidacion_Mensual" Multiplicity="1" />
           <End Role="Liquidacion_Mensual_Detalle" Type="Self.Liquidacion_Mensual_Detalle" Multiplicity="*" />
           <ReferentialConstraint>
@@ -191,7 +191,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Liquidaci__Usuar__24927208">
+        <Association Name="FK__Liquidaci__Usuar__25869641">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Liquidacion_Mensual" Type="Self.Liquidacion_Mensual" Multiplicity="*" />
           <ReferentialConstraint>
@@ -262,31 +262,31 @@
           <EntitySet Name="Turno" EntityType="Self.Turno" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vacaciones" EntityType="Self.Vacaciones" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Empleado___Emple__2D27B809" Association="Self.FK__Empleado___Emple__2D27B809">
+          <AssociationSet Name="FK__Empleado___Emple__2E1BDC42" Association="Self.FK__Empleado___Emple__2E1BDC42">
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="Empleado_Salario_Historico" EntitySet="Empleado_Salario_Historico" />
           </AssociationSet>
-          <AssociationSet Name="FK__Empleado___Usuar__2E1BDC42" Association="Self.FK__Empleado___Usuar__2E1BDC42">
+          <AssociationSet Name="FK__Empleado___Usuar__2F10007B" Association="Self.FK__Empleado___Usuar__2F10007B">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Empleado_Salario_Historico" EntitySet="Empleado_Salario_Historico" />
           </AssociationSet>
-          <AssociationSet Name="FK__Empleado__Turno___20C1E124" Association="Self.FK__Empleado__Turno___20C1E124">
+          <AssociationSet Name="FK__Empleado__Turno___21B6055D" Association="Self.FK__Empleado__Turno___21B6055D">
             <End Role="Turno" EntitySet="Turno" />
             <End Role="Empleado" EntitySet="Empleado" />
           </AssociationSet>
-          <AssociationSet Name="FK__Liquidaci__Conce__2A4B4B5E" Association="Self.FK__Liquidaci__Conce__2A4B4B5E">
+          <AssociationSet Name="FK__Liquidaci__Conce__2B3F6F97" Association="Self.FK__Liquidaci__Conce__2B3F6F97">
             <End Role="Concepto" EntitySet="Concepto" />
             <End Role="Liquidacion_Mensual_Detalle" EntitySet="Liquidacion_Mensual_Detalle" />
           </AssociationSet>
-          <AssociationSet Name="FK__Liquidaci__Emple__29572725" Association="Self.FK__Liquidaci__Emple__29572725">
+          <AssociationSet Name="FK__Liquidaci__Emple__2A4B4B5E" Association="Self.FK__Liquidaci__Emple__2A4B4B5E">
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="Liquidacion_Mensual_Detalle" EntitySet="Liquidacion_Mensual_Detalle" />
           </AssociationSet>
-          <AssociationSet Name="FK__Liquidaci__Liqui__286302EC" Association="Self.FK__Liquidaci__Liqui__286302EC">
+          <AssociationSet Name="FK__Liquidaci__Liqui__29572725" Association="Self.FK__Liquidaci__Liqui__29572725">
             <End Role="Liquidacion_Mensual" EntitySet="Liquidacion_Mensual" />
             <End Role="Liquidacion_Mensual_Detalle" EntitySet="Liquidacion_Mensual_Detalle" />
           </AssociationSet>
-          <AssociationSet Name="FK__Liquidaci__Usuar__24927208" Association="Self.FK__Liquidaci__Usuar__24927208">
+          <AssociationSet Name="FK__Liquidaci__Usuar__25869641" Association="Self.FK__Liquidaci__Usuar__25869641">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Liquidacion_Mensual" EntitySet="Liquidacion_Mensual" />
           </AssociationSet>
@@ -307,8 +307,7 @@
             <End Role="Vacaciones" EntitySet="Vacaciones" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Modelo_Datos" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -332,7 +331,7 @@
           </Key>
           <Property Name="Id_Concepto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Tipo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tipo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Liquidacion_Mensual_Detalle" Relationship="Self.FK__Liquidaci__Conce__2A4B4B5E" FromRole="Concepto" ToRole="Liquidacion_Mensual_Detalle" />
         </EntityType>
         <EntityType Name="Empleado">

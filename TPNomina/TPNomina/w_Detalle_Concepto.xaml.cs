@@ -58,6 +58,33 @@ namespace TPNomina
 
         }
 
+        private void calculo()
+        {
+            try
+            {
+
+                // Empleado.Salario_Basico + Concepto 
+
+                Empleado e = (Empleado)cboEmpleado.SelectedItem;
+                Liquidacion_Mensual l = (Liquidacion_Mensual)cboLiquidacion.SelectedItem;
+
+                //var totalIngresos  = Empleado.Salario_Basico + Concepto
+                List<Liquidacion_Mensual_Detalle> listasal = new List<Liquidacion_Mensual_Detalle>();
+                listasal = Datos.Liquidacion_Mensual_Detalle.ToList();
+                var otraPB = from c in listasal
+                             where c.Empleado.Id_Empleado == e.Id_Empleado && c.Monto > 0 && c.Liquidacion_Mensual.Id_Liquidacion == l.Id_Liquidacion
+                             select c;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+
         private void btnAgregarConcepto_Click(object sender, RoutedEventArgs e)
         {
             try

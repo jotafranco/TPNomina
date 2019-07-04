@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +44,7 @@ namespace TPNomina
             cboEmpleado.DisplayMemberPath = "Nombres";
             cboEmpleado.SelectedValuePath = "Id_Empleado";
             CargarDatosGrilla();
+            calculo();
 
         }
 
@@ -65,23 +68,44 @@ namespace TPNomina
 
                 // Empleado.Salario_Basico + Concepto 
 
-                Empleado e = (Empleado)cboEmpleado.SelectedItem;
-                Liquidacion_Mensual l = (Liquidacion_Mensual)cboLiquidacion.SelectedItem;
+                //Empleado e = (Empleado)cboEmpleado.SelectedItem;
+                //Liquidacion_Mensual l = (Liquidacion_Mensual)cboLiquidacion.SelectedItem;
 
                 //var totalIngresos  = Empleado.Salario_Basico + Concepto
-                List<Liquidacion_Mensual_Detalle> listasal = new List<Liquidacion_Mensual_Detalle>();
-                listasal = Datos.Liquidacion_Mensual_Detalle.ToList();
-                var otraPB = from c in listasal
-                             where c.Empleado.Id_Empleado == e.Id_Empleado && c.Monto > 0 && c.Liquidacion_Mensual.Id_Liquidacion == l.Id_Liquidacion
-                             select c;
+                
+                int id_Emp;
+
+                using (SqlConnection ConexionSQLServer = new SqlConnection("Server=DESKTOP-T789I5C\\SQLEXPRESS;Database=Nomina;User ID=sa;Password=yamato2804;Trusted_Connection=False;"))
+                {
+                    using (SqlCommand cmdSQL = new SqlCommand("select * from Empleado", (SqlConnection)ConexionSQLServer))
+                    {
+                        if (ConexionSQLServer.State != ConnectionState.Open)
+                        {
+                            ConexionSQLServer.Open();
+                        }
+
+                        SqlDataReader elDataReader = cmdSQL.ExecuteReader();
+
+                        while (elDataReader.Read())
+                        {
+                            id_Emp = (int)elDataReader["Id_Empleado"];
+                            List<Liquidacion_Mensual_Detalle> listasal = new List<Liquidacion_Mensual_Detalle>();
+                            listasal = Datos.Liquidacion_Mensual_Detalle.ToList();
+
+                            var otraPB = from c in listasal
+                                         where c.Empleado.Id_Empleado == id_Emp && c.Monto > 0
+                                         select c;
+                        }
+
+                    }
+                }
 
 
-            }
+                }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
 
@@ -104,7 +128,7 @@ namespace TPNomina
                             if (cboLiquidacion.SelectedItem != null)
                             {
                                 Liquidacion_Mensual varEst = (Liquidacion_Mensual)cboLiquidacion.SelectedItem;
-                                if (Convert.ToInt16(txtMonto.Text) <= 0)
+                                if (Convert.ToInt64(txtMonto.Text) <= 0)
                                 {
                                     MessageBox.Show("El monto debe ser mayor a 0");
                                 }

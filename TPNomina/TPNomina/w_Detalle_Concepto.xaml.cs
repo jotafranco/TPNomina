@@ -89,49 +89,39 @@ namespace TPNomina
                         while (elDataReader.Read())
                         {
                             id_Emp = (int)elDataReader["Id_Empleado"];
-                            List<Liquidacion_Mensual_Detalle> listasal = new List<Liquidacion_Mensual_Detalle>();
-                            listasal = Datos.Liquidacion_Mensual_Detalle.ToList();
-
-                            var otraPB = from c in listasal
-                                         where c.Empleado.Id_Empleado == id_Emp && c.Monto > 0
-                                         select c;
+                            
+                            CalculoSalario(id_Emp);
                         }
 
                     }
                 }
-
-
-                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        //private void CalculoSalario()
-        // {
+        private void CalculoSalario(int id_Emp)
+        {
+            try
+            {
 
-        //    int  suma, rest ;            
-        //    double salario,TOTAL;
-        //    Empleado emp = (Empleado)cboEmpleado.SelectedItem;
-        //    Concepto cp = (Concepto)cboConcepto.SelectedItem;
-        //    salario = emp.Salario_Basico;
-            
-            
-        //    if(this.cboConcepto.SelectedIndex== 0)
-        //    {
-        //       cp.Descripcion = "Positivo";
-        //        suma = suma + concept;//concept seria una variable que va a guardar el precio del concepto cuando se le agregue ese campo a la tabla
-        //    }
-        //    else
-        //    {
-        //        rest = rest + concept;
-        //    }
-        //    TOTAL = ((salario + suma - rest) * 0.9);
-        //    this.txtMonto.Text = TOTAL.ToString();
-        //}
+                List<Liquidacion_Mensual_Detalle> listasal = new List<Liquidacion_Mensual_Detalle>();
+                listasal = Datos.Liquidacion_Mensual_Detalle.ToList();
 
-    private void btnAgregarConcepto_Click(object sender, RoutedEventArgs e)
+                var liqPos = from c in listasal
+                             where c.Empleado.Id_Empleado == id_Emp && c.Monto > 0
+                             select c;
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAgregarConcepto_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -210,11 +200,9 @@ namespace TPNomina
             catch
             {
 
-                MessageBox.Show("Error, tal vez la liquidación y el empleado son iguales");
+                MessageBox.Show("Error, revise los datos que selecciona");
 
             }
-
-
         }
 
         private void btnEliminarConcepto_Click(object sender, RoutedEventArgs e)
@@ -233,8 +221,15 @@ namespace TPNomina
         private void cboConcepto_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Concepto concepto = (Concepto)cboConcepto.SelectedItem;
-            txtTipo.Text = concepto.Tipo;
-
+            if (concepto.Descripcion == "Ips")
+            {
+                //Valida pero no podemos limpiar el combox y se queda seleccionado IPS QUE CAGADA
+                MessageBox.Show("Ips es un concepto que se c;alculo automáticamente...NO SE PUEDE SELECCIONAR");
+            }
+            else
+            {
+                txtTipo.Text = concepto.Tipo;
+            }
         }
 
         private void LimpiarDatos()
@@ -244,10 +239,6 @@ namespace TPNomina
             cboLiquidacion.SelectedValue = null;
             txtMonto.Text = string.Empty;
             txtTipo.Text = string.Empty;
-            
         }
-
-
-
     }
 }

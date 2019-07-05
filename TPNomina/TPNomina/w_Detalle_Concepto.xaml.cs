@@ -108,8 +108,30 @@ namespace TPNomina
             }
         }
 
+        //private void CalculoSalario()
+        // {
 
-        private void btnAgregarConcepto_Click(object sender, RoutedEventArgs e)
+        //    int  suma, rest ;            
+        //    double salario,TOTAL;
+        //    Empleado emp = (Empleado)cboEmpleado.SelectedItem;
+        //    Concepto cp = (Concepto)cboConcepto.SelectedItem;
+        //    salario = emp.Salario_Basico;
+            
+            
+        //    if(this.cboConcepto.SelectedIndex== 0)
+        //    {
+        //       cp.Descripcion = "Positivo";
+        //        suma = suma + concept;//concept seria una variable que va a guardar el precio del concepto cuando se le agregue ese campo a la tabla
+        //    }
+        //    else
+        //    {
+        //        rest = rest + concept;
+        //    }
+        //    TOTAL = ((salario + suma - rest) * 0.9);
+        //    this.txtMonto.Text = TOTAL.ToString();
+        //}
+
+    private void btnAgregarConcepto_Click(object sender, RoutedEventArgs e)
         {
             try
             {

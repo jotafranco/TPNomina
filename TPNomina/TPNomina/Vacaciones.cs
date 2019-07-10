@@ -24,5 +24,6 @@ namespace TPNomina
         public string Observaciones { get; set; }
     
         public virtual Empleado Empleado { get; set; }
+        
     }
 }

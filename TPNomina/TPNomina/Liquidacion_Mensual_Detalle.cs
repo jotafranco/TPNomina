@@ -24,4 +24,6 @@ namespace TPNomina
         public virtual Empleado Empleado { get; set; }
         public virtual Liquidacion_Mensual Liquidacion_Mensual { get; set; }
     }
+
+
 }

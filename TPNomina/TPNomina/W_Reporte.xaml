@@ -6,15 +6,10 @@
         xmlns:local="clr-namespace:TPNomina"
         xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer" x:Class="TPNomina.W_Reporte"
         mc:Ignorable="d"
-        Title="W_Reporte" Height="1000" Width="1400" Loaded="Window_Loaded">
+        Title="W_Reporte" Height="1000" Width="1310" Loaded="Window_Loaded">
     <Grid>
 
-        <Viewer:CrystalReportsViewer x:Name="CrystalReportViewer1" HorizontalAlignment="Left" Height="800" Margin="10,159,0,0" VerticalAlignment="Top" Width="1300"/>
-        <Button Content="Buscar" Name="btnBuscar" HorizontalAlignment="Left" Margin="459,76,0,0" VerticalAlignment="Top" Width="76" RenderTransformOrigin="-0.14,-0.531"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="254,107,0,0" TextWrapping="Wrap" Text=" " Name="txtAnho" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Año" HorizontalAlignment="Left" Margin="153,107,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="254,56,0,0" TextWrapping="Wrap" Text=" " Name="txtMes" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Mes" HorizontalAlignment="Left" Margin="153,58,0,0" VerticalAlignment="Top"/>
+        <Viewer:CrystalReportsViewer Name="CrystalReportViewer1" HorizontalAlignment="Left" Height="800" Margin="10,62,0,0" VerticalAlignment="Top" Width="1300"/>
 
     </Grid>
 </Window>

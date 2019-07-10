@@ -30,5 +30,11 @@ namespace TPNomina
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Liquidacion_Mensual_Detalle> Liquidacion_Mensual_Detalle { get; set; }
         public virtual Usuario Usuario { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format(this.Mes + "/" +this.Anho);
+        }
+
     }
 }

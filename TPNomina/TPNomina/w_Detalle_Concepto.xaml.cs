@@ -75,7 +75,7 @@ namespace TPNomina
                 
                 int id_Emp;
 
-                using (SqlConnection ConexionSQLServer = new SqlConnection("Server=DESKTOP-T789I5C\\SQLEXPRESS;Database=Nomina;User ID=sa;Password=yamato2804;Trusted_Connection=False;"))
+                using (SqlConnection ConexionSQLServer = new SqlConnection("Server=LAPTOP-7FI8GS06\\SQLEXPRESS;Database=Nomina;User ID=sa;Password=j321;Trusted_Connection=False;"))
                 {
                     using (SqlCommand cmdSQL = new SqlCommand("select * from Empleado", (SqlConnection)ConexionSQLServer))
                     {

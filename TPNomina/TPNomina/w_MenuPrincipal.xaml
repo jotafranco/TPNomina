@@ -19,6 +19,7 @@
                 <MenuItem Header="Cabecera" Name="MenuLiquidacion" Click="MenuLiquidacion_Click"/>
                 <MenuItem Header="Detalle" Name="MenuDetalleLiquidacion" Click="MenuDetalleLiquidacion_Click"/>
             </MenuItem>
+            <MenuItem Header="Reporte Cañon" Name="MenuReporte" Click="MenuReporte_Click"/>
             <Separator />
             <MenuItem Header="Salir"  Name="MenuSalir" Click="MenuSalir_Click"/>
         </MenuItem>

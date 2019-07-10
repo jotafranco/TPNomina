@@ -89,5 +89,11 @@ namespace TPNomina
             w_Detalle_Concepto ventanaDetalleConcepto = new w_Detalle_Concepto();
             ventanaDetalleConcepto.ShowDialog();
         }
+
+        private void MenuReporte_Click(object sender, RoutedEventArgs e)
+        {
+            W_Reporte ventanaReporte = new W_Reporte();
+            ventanaReporte.ShowDialog();
+        }
     }
 }
